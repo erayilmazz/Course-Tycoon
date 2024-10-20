@@ -1,0 +1,22 @@
+#pragma once
+#include <string>
+using std::string;
+
+#include <unordered_map>
+using std::unordered_map;
+
+class Teacher{
+protected:
+    string name;
+    unordered_map<string, int> skills;
+
+public:
+    Teacher(const string& name, const unordered_map<string, int>& skills);
+    virtual ~Teacher() = default;
+
+    string get_name() const;
+    int get_skill(const string& skill) const;
+    unordered_map<string,int> get_skills() const;
+}
+
+    
