@@ -9,13 +9,18 @@ using std::endl;
 
 int main(){
     cout << "Hello World!" << endl;
-    Teacher teacher1("Vip Fizik",{{"Physics", 18},{"Chemistry", 5}});
+    Teacher teacher1("Kemal",{{"Physics", 18},{"Chemistry", 5}});
     cout << teacher1.getName() << endl;
     cout << teacher1.getSkill("Physics") << endl;
 
-    Book book1("Vip Fizik Defteri","Physics");
+    Book book1("Math101","Math");
     cout << book1.getTopic() << ":" << book1.getTitle() << endl;
 
+    Author author1("Luke",{{"Math",13},{"Geometry",12}});
+    cout << author1.getName() << endl;
+    cout << author1.getSkill("Math") << endl;
+    author1.addBook(book1);
+    author1.displayBooks();
 
     int choice;
     cin >> choice;

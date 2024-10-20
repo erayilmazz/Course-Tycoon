@@ -10,7 +10,7 @@ private:
     vector<Book> books;
 
 public:
-    Author(const string& name, unordered_map<string,int>& skills);
+    Author(const string& name, const unordered_map<string,int>& skills);
     void addBook(const Book& book);
     void displayBooks() const;
 
