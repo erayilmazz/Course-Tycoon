@@ -13,7 +13,10 @@ int main(){
     cout << teacher1.getName() << endl;
     cout << teacher1.getSkill("Physics") << endl;
 
-    
+    Book book1("Vip Fizik Defteri","Physics");
+    cout << book1.getTopic() << ":" << book1.getTitle() << endl;
+
+
     int choice;
     cin >> choice;
 }
