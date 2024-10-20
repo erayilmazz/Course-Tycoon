@@ -3,6 +3,7 @@
 using std::vector;
 
 #include <teacher.hpp>
+#include <book.hpp>
 
 class Author : public Teacher{
 private:
@@ -10,7 +11,7 @@ private:
 
 public:
     Author(const string& name, unordered_map<string,int>& skills);
-    void addBook(const string& book);
+    void addBook(const Book& book);
     void displayBooks() const;
 
 };
