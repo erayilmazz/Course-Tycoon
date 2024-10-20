@@ -12,6 +12,6 @@ private:
 
 public:
     Lesson(const string& subject, const Lecturer& lecturer);
-    string subjectName() const;
-    string lecturerName() const;
+    string getSubjectName() const;
+    string getLecturerName() const;
 };
