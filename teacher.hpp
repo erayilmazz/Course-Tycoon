@@ -14,9 +14,9 @@ public:
     Teacher(const string& name, unordered_map<string, int>& skills);
     virtual ~Teacher() = default;
 
-    string get_name() const;
-    int get_skill(const string& skill) const; //get specific skill.
-    unordered_map<string,int> get_skills() const; //get all skills.
+    string getName() const;
+    int getSkill(const string& skill) const; //get specific skill.
+    unordered_map<string,int> getSkills() const; //get all skills.
 };
 
     
