@@ -2,12 +2,12 @@
 #include <vector>
 using std::vector;
 
-#include <teacher.hpp>
-#include <book.hpp>
+#include "teacher.hpp"
+#include "book.hpp"
 
 class Author : public Teacher{
 private:
-    vector<book> books;
+    vector<Book> books;
 
 public:
     Author(const string& name, unordered_map<string,int>& skills);

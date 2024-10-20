@@ -1,4 +1,4 @@
-#include "book.hpp";
+#include "book.hpp"
 
 Book::Book(const string& title, const string& topic)
     :title(title), topic(topic){}

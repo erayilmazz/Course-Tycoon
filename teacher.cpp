@@ -5,6 +5,6 @@ Teacher::Teacher(const string& name, const unordered_map<string,int>& skills)
 
 string Teacher::getName() const {return name; }
 
-int Teacher::getSkill(const string& skill) const {return skills[skill];}
+int Teacher::getSkill(const string& skill) const {return skills.at(skill);}
 
-unordered_map<string,int> getSkills() const {return skills};
+//unordered_map<string,int> getSkills() const {return skills;};
