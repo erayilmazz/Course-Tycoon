@@ -1,5 +1,5 @@
 #pragma once
-#include <books>
+#include <vector>
 using std::vector;
 
 #include <teacher.hpp>
@@ -9,9 +9,9 @@ private:
     vector<book> books;
 
 public:
-    Teacher(const string& name, unordered_map<string,int>& skills);
+    Author(const string& name, unordered_map<string,int>& skills);
     void addBook(const string& book);
     void displayBooks() const;
-    
+
 };
 
