@@ -3,7 +3,7 @@
 #include <string>
 using std::string;
 
-#include "lecturer.hpp"
+class Lecturer;
 
 class Lesson{
 private:
@@ -11,7 +11,7 @@ private:
     Lecturer lecturer;
 
 public:
-    Lesson(const string& subject, const Lecturer& lecturer);
+    Lesson(const string& subject, const Lecturer lecturer);
     string getSubjectName() const;
     string getLecturerName() const;
 };

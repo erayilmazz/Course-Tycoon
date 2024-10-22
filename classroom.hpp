@@ -13,8 +13,8 @@ private:
 
     
 public:
-    Classroom(const Lecturer& classroomLecturer, const Lecturer& classroomBook);
+    Classroom(const Lecturer& classroomLecturer, const Book& classroomBook);
     string getClassroomLecturer() const;
     string getClassroomBook() const;
-    
+
 }

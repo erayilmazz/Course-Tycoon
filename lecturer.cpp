@@ -9,7 +9,7 @@ Lecturer::Lecturer(const string& name, const unordered_map<string,int>& skills)
 
 void Lecturer::addLesson(const Lesson& lesson) {lessons.push_back(lesson);}
 
-void Lecturer::displayLessons(){
+void Lecturer::displayLessons() const{
     if (lessons.empty()){
         cout << "empty" << endl;
     } else {
