@@ -8,12 +8,18 @@ using std::string;
 
 class Classroom{
 private:
-    Lecturer classroomLecturer;
-    Book classroomBook;
+    Lecturer lecturer;
+    Book book;
+    string name;
 
     
 public:
-    Classroom(const Lecturer& classroomLecturer, const Book& classroomBook);
+    Classroom(const string &name);
+    string getClassroomName() const;
+
+    void setClassroomLecturer(Lecturer& classroomLecturer);
+    void setClassroomBook(Book& classroomBook);
+
     string getClassroomLecturer() const;
     string getClassroomBook() const;
 
