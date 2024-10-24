@@ -10,3 +10,5 @@ void Classroom::setClassroomBook(Book& classroomBook) {book = classroomBook;}
 
 string Classroom::getClassroomLecturer() const {return lecturer.getName();}
 string Classroom::getClassroomBook() const {return book.getTitle();}
+
+Classroom::~Classroom() {}

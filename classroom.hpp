@@ -23,4 +23,5 @@ public:
     string getClassroomLecturer() const;
     string getClassroomBook() const;
 
+    virtual ~Classroom();
 };
