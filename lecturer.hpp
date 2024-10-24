@@ -7,11 +7,11 @@ using std::vector;
 
 class Lecturer : public Teacher{
 private:
-    vector<Lesson> lessons;
+    vector<Lesson*> lessons;
 public:
     Lecturer() = default;
     Lecturer(const string& name);
-    void addLesson(const Lesson lesson);
+    void addLesson(Lesson* lesson);
     void displayLessons() const;
 };
 
