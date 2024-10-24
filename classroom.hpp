@@ -8,19 +8,15 @@ using std::string;
 
 class Classroom{
 private:
-    Lecturer* lecturer;
-    Book* book;
     string name;
+    vector<Lesson*> lessons;
 
 public:
     Classroom(const string &name);
     string getClassroomName() const;
 
-    void setClassroomLecturer(Lecturer* classroomLecturer);
-    void setClassroomBook(Book* classroomBook);
-
-    string getClassroomLecturer() const;
-    string getClassroomBook() const;
+    void addLesson(Lesson* lesson);
+    
 
     virtual ~Classroom();
 };
