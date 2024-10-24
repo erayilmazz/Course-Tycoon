@@ -7,7 +7,7 @@ using std::endl;
 #include "author.hpp"
 #include "book.hpp"
 #include "lecturer.hpp"
-#include "lesson.cpp"
+#include "lesson.hpp"
 #include "classroom.hpp"
 
 int main(){
