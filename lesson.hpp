@@ -1,6 +1,6 @@
 #pragma once
 #include "lecturer.hpp"
-#include "classroom.hpp"
+class Classroom;
 #include "book.hpp"
 #include <string>
 using std::string;

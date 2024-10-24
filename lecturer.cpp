@@ -1,4 +1,5 @@
 #include "lecturer.hpp"
+#include "lesson.hpp"
 
 #include <iostream>
 using std::cout;

@@ -14,14 +14,14 @@ int main(){
     cout << "Hello World!" << endl;
     Teacher teacher1("Kemal");
     cout << teacher1.getName() << endl;
-    cout << teacher1.getSkill("Physics") << endl;
+    //cout << teacher1.getSkill("Physics") << endl;
 
     Book book1("Math101","Math");
     cout << book1.getTopic() << ":" << book1.getTitle() << endl;
 
     Author author1("Luke");
     cout << author1.getName() << endl;
-    cout << author1.getSkill("Math") << endl;
+    //cout << author1.getSkill("Math") << endl;
     author1.addBook(&book1);
     author1.displayBooks();
 

@@ -3,7 +3,8 @@
 using std::vector;
 
 #include "teacher.hpp"
-#include "lesson.hpp"
+
+class Lesson;
 
 class Lecturer : public Teacher{
 private:
