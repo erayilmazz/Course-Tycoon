@@ -8,6 +8,7 @@ using std::endl;
 #include "book.hpp"
 #include "lecturer.hpp"
 #include "lesson.cpp"
+#include "classroom.hpp"
 
 int main(){
     cout << "Hello World!" << endl;
@@ -21,20 +22,20 @@ int main(){
     Author author1("Luke");
     cout << author1.getName() << endl;
     cout << author1.getSkill("Math") << endl;
-    author1.addBook(book1);
+    author1.addBook(&book1);
     author1.displayBooks();
 
+    Classroom classroom1("11E");
+    classroom1.getClassroomName();
+
     Lecturer lecturer1("Kane");
-    Lesson lesson1("math",lecturer1);
-    cout << lesson1.getLecturerName() << lesson1.getSubjectName() << endl;
+    Lesson lesson1("Math");
+    cout << lesson1.getSubjectName() << endl;
+    lesson1.setLecturer(&lecturer1);
+    lesson1.setBook(&book1);
+    lesson1.setClassroom(&classroom1);
+    cout << lesson1.getLecturer()->getName() << lesson1.getBook()->getTitle() << lesson1.getClassroom()->getClassroomName() << endl;
     lecturer1.displayLessons();
-    
-
-    
-
-    
-
-
 
     int choice;
     cin >> choice;

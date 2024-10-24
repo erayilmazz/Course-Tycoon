@@ -2,9 +2,7 @@
 #include <string>
 using std::string;
 
-#include "lecturer.hpp"
-#include "book.hpp"
-
+#include "lesson.hpp"
 
 class Classroom{
 private:
@@ -16,7 +14,5 @@ public:
     string getClassroomName() const;
 
     void addLesson(Lesson* lesson);
-    
-
     virtual ~Classroom();
 };
