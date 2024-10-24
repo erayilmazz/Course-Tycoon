@@ -1,9 +1,8 @@
 #pragma once
- //#include "lecturer.hpp"
+#include "lecturer.hpp"
 #include <string>
 using std::string;
 
-class Lecturer;
 class Lesson{
 private:
     string subject;

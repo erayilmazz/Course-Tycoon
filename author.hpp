@@ -7,11 +7,11 @@ using std::vector;
 
 class Author : public Teacher{
 private:
-    vector<Book> books;
+    vector<Book*> books;
 
 public:
     Author(const string& name);
-    void addBook(const Book& book);
+    void addBook(Book* book);
     void displayBooks() const;
 
 };
