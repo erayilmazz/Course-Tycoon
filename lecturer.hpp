@@ -9,6 +9,7 @@ class Lecturer : public Teacher{
 private:
     vector<Lesson> lessons;
 public:
+    Lecturer() = default;
     Lecturer(const string& name);
     void addLesson(const Lesson lesson);
     void displayLessons() const;

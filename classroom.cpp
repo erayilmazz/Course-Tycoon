@@ -1,4 +1,4 @@
-#include "classroom.hpp";
+#include "classroom.hpp"
 
 Classroom::Classroom(const string& name)
     :name(name) {}

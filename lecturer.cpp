@@ -7,7 +7,7 @@ using std::endl;
 Lecturer::Lecturer(const string& name)
         : Teacher(name) {}
 
-void Lecturer::addLesson(const Lesson& lesson) {lessons.push_back(lesson);}
+void Lecturer::addLesson(Lesson* lesson) {lessons.push_back(lesson);}
 
 void Lecturer::displayLessons() const{
     if (lessons.empty()){
@@ -15,7 +15,7 @@ void Lecturer::displayLessons() const{
     } else {
         cout << name <<"'s lessons: "<< endl;
         for (size_t i = 0; i < lessons.size(); ++i){
-            cout << i + 1 << ". " << lessons[i].getSubjectName() << endl;
+            cout << i + 1 << ". " << lessons[i]->getLecturerName() << endl;
         }
     }
 }

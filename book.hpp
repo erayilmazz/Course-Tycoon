@@ -7,6 +7,7 @@ class Book{
         string title;
         string topic;
     public:
+        Book() = default;
         Book(const string& title, const string& topic);
         string getTitle() const;
         string getTopic() const;
