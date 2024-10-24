@@ -9,8 +9,9 @@ class Lecturer : public Teacher{
 private:
     vector<Lesson> lessons;
 public:
-    Lecturer(const string& name, const unordered_map<string,int>& skills);
-    void addLesson(const Lesson& lesson);
+    Lecturer(const string& name);
+    void addLesson(const Lesson lesson);
     void displayLessons() const;
 };
 
+//const unordered_map<string,int>& skills

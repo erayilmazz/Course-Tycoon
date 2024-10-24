@@ -4,8 +4,8 @@
 using std::cout;
 using std::endl;
 
-Lecturer::Lecturer(const string& name, const unordered_map<string,int>& skills)
-        : Teacher(name,skills) {}
+Lecturer::Lecturer(const string& name)
+        : Teacher(name) {}
 
 void Lecturer::addLesson(const Lesson& lesson) {lessons.push_back(lesson);}
 

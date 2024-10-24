@@ -4,8 +4,8 @@
 using std::cout;
 using std::endl;
 
-Author::Author(const string& name, const unordered_map<string,int>& skills)
-        : Teacher(name,skills) {}
+Author::Author(const string& name)
+        : Teacher(name) {}
 
 void Author::addBook(const Book& book){books.push_back(book);}
 
