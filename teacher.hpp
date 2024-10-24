@@ -11,6 +11,7 @@ protected:
     unordered_map<string, int> skills; //dictionary for teacher's skills for each lessons.
 
 public:
+    Teacher() = default;
     Teacher(const string& name);
     virtual ~Teacher() = default;
 
