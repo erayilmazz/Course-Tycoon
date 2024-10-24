@@ -6,6 +6,7 @@ class Book{
     protected:
         string title;
         string topic;
+        //add author here
     public:
         Book() = default;
         Book(const string& title, const string& topic);

@@ -1,5 +1,3 @@
-#include "lesson.hpp"
-
 Lesson::Lesson(const string& subject)
         :subject(subject) {}
 
