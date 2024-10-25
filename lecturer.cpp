@@ -16,7 +16,7 @@ void Lecturer::displayLessons() const{
     } else {
         cout << name <<"'s lessons: "<< endl;
         for (size_t i = 0; i < lessons.size(); ++i){
-            cout << i + 1 << ". " << lessons[i]->getLecturer()->getName() << endl;
+            cout << i + 1 << ". " << lessons[i]->getSubjectName() << endl;
         }
     }
 }

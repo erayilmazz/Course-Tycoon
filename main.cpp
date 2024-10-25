@@ -11,32 +11,34 @@ using std::endl;
 #include "classroom.hpp"
 
 int main(){
-    cout << "Hello World!" << endl;
+    cout << "Hello World!" << endl; //Hello World!
     Teacher teacher1("Kemal");
-    cout << teacher1.getName() << endl;
-    //cout << teacher1.getSkill("Physics") << endl;
+    cout << teacher1.getName() << endl; //Kemal
+    teacher1.setSkills({ {"Physics", 17} });
+    cout << teacher1.getSkill("Physics") << endl;//17
 
     Book book1("Math101","Math");
-    cout << book1.getTopic() << ":" << book1.getTitle() << endl;
+    cout << book1.getTopic() << ": " << book1.getTitle() << endl; //Math: Math101 
 
     Author author1("Luke");
-    cout << author1.getName() << endl;
-    //cout << author1.getSkill("Math") << endl;
+    cout << author1.getName() << endl;//Luke
+    author1.setSkills({ {"Math", 17} });
+    cout << author1.getSkill("Math") << endl;//17
     author1.addBook(&book1);
-    author1.displayBooks();
+    author1.displayBooks();//Luke's books: 1.Math101
 
     Classroom classroom1("11E");
-    classroom1.getClassroomName();
+    cout << classroom1.getClassroomName() << endl;//11E
 
     Lecturer lecturer1("Kane");
     Lesson lesson1("Math");
-    cout << lesson1.getSubjectName() << endl;
+    cout << lesson1.getSubjectName() << endl; //Math
     lesson1.setLecturer(&lecturer1);
+    lecturer1.addLesson(&lesson1);
     lesson1.setBook(&book1);
     lesson1.setClassroom(&classroom1);
-    cout << lesson1.getLecturer()->getName() << lesson1.getBook()->getTitle() << lesson1.getClassroom()->getClassroomName() << endl;
-    lecturer1.displayLessons();
-
+    cout << lesson1.getLecturer()->getName() << lesson1.getBook()->getTitle() << lesson1.getClassroom()->getClassroomName() << endl; //KaneMAth10111E
+    lecturer1.displayLessons();//Kane's lessons: 1.Kane
     int choice;
     cin >> choice;
 }
