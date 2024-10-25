@@ -2,7 +2,10 @@
 #include <string>
 using std::string;
 
-#include "lesson.hpp"
+#include <vector>
+using std::vector;
+
+class Lesson;
 
 class Classroom{
 private:
