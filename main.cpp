@@ -73,12 +73,12 @@ Classroom* chooseClassroom(){
 }
 
 int action(){
-    cout << "Please choose between 1-9"
-    << "1. Add a lecturer"
-    << "2. Add a author"
-    << "3. Create a book"
-    << "4. Create new lesson"
-    << "5. Create new classroom"
+    cout << "Please choose between 1-9" << endl
+    << "1. Add a lecturer" << endl
+    << "2. Add a author" << endl
+    << "3. Create a book" << endl
+    << "4. Create new lesson" << endl
+    << "5. Create new classroom" << endl
     << "6. Edit lesson" << endl;
      // add view choices.
     int choice;
@@ -97,7 +97,7 @@ void addLecturer(){
 
 void addAuthor(){
     string name;
-    cout << "Choose lecturer name: ";
+    cout << "Choose author name: ";
     cin >> name;
     Author* newAuthor = new Author(name);
     manager.addAuthor(newAuthor);
@@ -115,30 +115,12 @@ void createBook(){
     Author* chosen_author = chooseAuthor();
     chosen_author->addBook(newBook);    
 }
-
-void createLesson(){
-    string name;
-    cout << "Choose lesson's name";
-    cin >> name;
-    Lesson* newLesson = new Lesson(name);
-    manager.addLesson(newLesson);
-    editLesson(newLesson);
-}
-
-void createClassroom(){
-    string name;
-    cout << "Choose classroom's name";
-    cin >> name;
-    Classroom* newClassroom = new Classroom(name);
-    manager.addClassroom(newClassroom);
-}
-
 void editLesson(Lesson* lesson){
     int choice;
-    cout << "Choose between 1-9" //while true
-    << "1.Set subject"
-    << "2.Set lecturer"
-    << "3.Set book"
+    cout << "Choose between 1-9" << endl //while true
+    << "1.Set subject" << endl
+    << "2.Set lecturer" << endl
+    << "3.Set book" << endl
     << "4.Set classroom" << endl;
     cin >> choice;
     if (choice == 1){
@@ -165,20 +147,39 @@ void editLesson(Lesson* lesson){
     }
 }
 
+void createLesson(){
+    string name;
+    cout << "Choose lesson's name";
+    cin >> name;
+    Lesson* newLesson = new Lesson(name);
+    manager.addLesson(newLesson);
+    editLesson(newLesson);
+}
+
+void createClassroom(){
+    string name;
+    cout << "Choose classroom's name";
+    cin >> name;
+    Classroom* newClassroom = new Classroom(name);
+    manager.addClassroom(newClassroom);
+}
+
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
-    const int choice = action();
-    if (choice == 0) return;
-    else if (choice == 1) addLecturer();
-    else if (choice == 2) addAuthor();
-    else if (choice == 3) createBook();
-    else if (choice == 4) createLesson();
-    else if (choice == 5) createClassroom();
-    else if (choice == 6){
-        Lesson* choosenLesson = chooseLesson();
-        editLesson(choosenLesson);
+    while (true){
+        const int choice = action();
+        if (choice == 0) return 0;
+        else if (choice == 1) addLecturer();
+        else if (choice == 2) addAuthor();
+        else if (choice == 3) createBook();
+        else if (choice == 4) createLesson();
+        else if (choice == 5) createClassroom();
+        else if (choice == 6){
+            Lesson* choosenLesson = chooseLesson();
+            editLesson(choosenLesson);
+        }
     }
-
    
     int finito;
     cin >> finito;
