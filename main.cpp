@@ -29,6 +29,13 @@ void addLecturer(){
     Lecturer name(name);
 }
 
+void addAuthor(){
+    string name;
+    cout << "Choose lecturer name: ";
+    cin >> name;
+    Author name(name);
+}
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
     const int choice = action();
