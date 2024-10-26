@@ -26,6 +26,9 @@ public:
     void addLecturer(Lecturer* lecturer);
     void addLesson(Lesson* lesson);
     void addClassroom(Classroom* classroom);
+
+    Teacher*  getTeacher(string name);
+
     void displayTeachers() const;
     void displayAuthors() const;
     void displayBooks() const;

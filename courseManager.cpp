@@ -9,6 +9,18 @@ void CourseManager::addLecturer(Lecturer* lecturer) {lecturers.push_back(lecture
 void CourseManager::addLesson(Lesson* lesson) {lessons.push_back(lesson);}
 void CourseManager::addClassroom(Classroom* classroom) {classrooms.push_back(classroom);}
 
+Teacher* CourseManager::getTeacher(string name){
+    if (teachers.empty()) {
+        cout << "There is no teacher." << endl;
+        return nullptr;
+    }
+    for (size_t i = 0; i < teachers.size(); ++i){
+        if (teachers[i]->getName() == name) return teachers[i];
+    }
+    cout << "There is no teacher  that name." << endl;
+    return nullptr;
+}
+
 void CourseManager::displayTeachers() const{
     if (teachers.empty()) {
         cout << "There is no teacher." << endl;
