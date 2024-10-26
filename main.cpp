@@ -83,6 +83,14 @@ void createLesson(){
     manager.addLesson(newLesson);
 }
 
+void createClassroom(){
+    string name;
+    cout << "Choose classroom's name";
+    cin >> name;
+    Classroom* newClassroom = new Classroom(name);
+    manager.addClassroom(newClassroom);
+}
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
     const int choice = action();
