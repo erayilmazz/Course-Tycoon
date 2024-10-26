@@ -51,6 +51,7 @@ void addLecturer(){
     cin >> name;
     Lecturer* newLecturer = new Lecturer(name);
     manager.addLecturer(newLecturer);
+    manager.addTeacher(newLecturer);
 }
 
 void addAuthor(){
@@ -58,6 +59,7 @@ void addAuthor(){
     cout << "Choose lecturer name: ";
     cin >> name;
     Author* newAuthor = new Author(name);
+    manager.addAuthor(newAuthor);
     manager.addAuthor(newAuthor);
 }
 
@@ -71,6 +73,14 @@ void createBook(){
     manager.addBook(newBook);
     Author* chosen_author = chooseAuthor();
     chosen_author->addBook(newBook);    
+}
+
+void createLesson(){
+    string name;
+    cout << "Choose lesson's name";
+    cin >> name;
+    Lesson* newLesson = new Lesson(name);
+    manager.addLesson(newLesson);
 }
 
 int main(){

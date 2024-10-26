@@ -134,7 +134,7 @@ void CourseManager::displayLessons() const{
     }
     cout << "Lessons: " << endl;
     for (size_t i = 0; i < lessons.size(); ++i){
-        cout << i + 1 << ". " << lessons[i]->getSubjectName() << endl;
+        cout << i + 1 << ". " << lessons[i]->getName() << endl;
     }
 }
 
