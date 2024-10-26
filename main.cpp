@@ -22,10 +22,17 @@ int action(){
     return choice; 
 }
 
+void addLecturer(){
+    string name;
+    cout << "Choose lecturer name: ";
+    cin >> name;
+    Lecturer name(name);
+}
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
     const int choice = action();
-
+    if (choice == 1) addLecturer();
 
     Teacher teacher1("Kemal");
     cout << teacher1.getName() << endl; //Kemal
@@ -57,3 +64,12 @@ int main(){
     int finito;
     cin >> finito;
 }
+
+
+//    while (true){
+//        cout << "Please choose between 1-9"
+//        << "0. Back to name"
+//        << "1. Add lesson to " << name
+//        << "2. Display " << name << "'s all lessons" << endl;
+//        
+//    }
