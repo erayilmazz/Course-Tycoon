@@ -21,6 +21,16 @@ string chooseFromTopics(){
     }
 }
 
+Lesson* chooseLesson(){
+    manager.displayLessons();
+    size_t choice;
+    while (true){
+        cout << "Choose between 1-9"; //add size
+        cin >> choice;
+        if (choice <= 9) return manager.getLesson(choice);
+    }
+}
+
 Author* chooseAuthor(){
     manager.displayAuthors();
     size_t choice;
@@ -112,6 +122,7 @@ void createLesson(){
     cin >> name;
     Lesson* newLesson = new Lesson(name);
     manager.addLesson(newLesson);
+    editLesson(newLesson);
 }
 
 void createClassroom(){
@@ -157,9 +168,33 @@ void editLesson(Lesson* lesson){
 int main(){
     cout << "Hello World!" << endl; //Hello World!
     const int choice = action();
-    if (choice == 1) addLecturer();
+    if (choice == 0) return;
+    else if (choice == 1) addLecturer();
+    else if (choice == 2) addAuthor();
+    else if (choice == 3) createBook();
+    else if (choice == 4) createLesson();
+    else if (choice == 5) createClassroom();
+    else if (choice == 6){
+        Lesson* choosenLesson = chooseLesson();
+        editLesson(choosenLesson);
+    }
 
-    Teacher teacher1("Kemal");
+   
+    int finito;
+    cin >> finito;
+}
+
+
+//    while (true){
+//        cout << "Please choose between 1-9"
+//        << "0. Back to name"
+//        << "1. Add lesson to " << name
+//        << "2. Display " << name << "'s all lessons" << endl;
+//        
+//    }
+
+/*
+ Teacher teacher1("Kemal");
     cout << teacher1.getName() << endl; //Kemal
     teacher1.setSkills({ {"Physics", 17} });
     cout << teacher1.getSkill("Physics") << endl;//17
@@ -186,15 +221,5 @@ int main(){
     lesson1.setClassroom(&classroom1);
     cout << lesson1.getLecturer()->getName() << lesson1.getBook()->getTitle() << lesson1.getClassroom()->getClassroomName() << endl; //KaneMAth10111E
     lecturer1.displayLessons();//Kane's lessons: 1.Kane
-    int finito;
-    cin >> finito;
-}
 
-
-//    while (true){
-//        cout << "Please choose between 1-9"
-//        << "0. Back to name"
-//        << "1. Add lesson to " << name
-//        << "2. Display " << name << "'s all lessons" << endl;
-//        
-//    }
+*/
