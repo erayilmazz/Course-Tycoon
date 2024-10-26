@@ -27,9 +27,38 @@ Author* chooseAuthor(){
     while (true){
         cout << "Choose between 1-9: "; //add size
         cin >> choice;
-        if (choice <= 9){
-            return manager.getAuthor(choice);
-        }
+        if (choice <= 9) return manager.getAuthor(choice);
+    }
+}
+
+Lecturer* chooseLecturer(){
+    manager.displayLecturers();
+    size_t choice;
+    while (true){
+        cout << "Choose between 1-9: "; //add size
+        cin >> choice;
+        if (choice <= 9) return manager.getLecturer(choice);
+
+    }
+}
+
+Book* chooseBook(){
+    manager.displayBooks();
+    size_t choice;
+    while (true){
+        cout << "Choose between 1-9"; //add size
+        cin >> choice;
+        if (choice <= 9) return manager.getBook(choice);
+    }
+}
+
+Classroom* chooseClassroom(){
+    manager.displayLessons();
+    size_t choice;
+    while(true){
+        cout << "Choose between 1-9";
+        cin >> choice;
+        if (choice <= 9) return manager.getClassroom(choice);
     }
 }
 
@@ -39,7 +68,9 @@ int action(){
     << "2. Add a author"
     << "3. Create a book"
     << "4. Create new lesson"
-    << "5. Create new classroom" << endl; // add view choices.
+    << "5. Create new classroom"
+    << "6. Edit lesson" << endl;
+     // add view choices.
     int choice;
     cin >> choice; //  check is it between that numbers
     return choice; 
@@ -91,6 +122,38 @@ void createClassroom(){
     manager.addClassroom(newClassroom);
 }
 
+void editLesson(Lesson* lesson){
+    int choice;
+    cout << "Choose between 1-9" //while true
+    << "1.Set subject"
+    << "2.Set lecturer"
+    << "3.Set book"
+    << "4.Set classroom" << endl;
+    cin >> choice;
+    if (choice == 1){
+        cout << "Choose subject: ";
+        string chosenTopic = chooseFromTopics();
+        lesson->setSubject(chosenTopic);
+    }
+    if (choice == 2){
+        cout << "Choose lecturer: ";
+        Lecturer* chosenLecturer = chooseLecturer();
+        lesson->setLecturer(chosenLecturer);
+        chosenLecturer->addLesson(lesson);
+    }
+    if (choice == 3){
+        cout << "Choose book: ";
+        Book* chosenBook = chooseBook();
+        lesson->setBook(chosenBook);
+    }
+    if (choice == 4){
+        cout << "Choose classroom: ";
+        Classroom* chosenClassroom = chooseClassroom();
+        lesson->setClassroom(chosenClassroom);
+        chosenClassroom->addLesson(lesson);
+    }
+}
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
     const int choice = action();
@@ -116,7 +179,7 @@ int main(){
 
     Lecturer lecturer1("Kane");
     Lesson lesson1("Math");
-    cout << lesson1.getSubjectName() << endl; //Math
+    cout << lesson1.getName() << endl; //Math
     lesson1.setLecturer(&lecturer1);
     lecturer1.addLesson(&lesson1);
     lesson1.setBook(&book1);
