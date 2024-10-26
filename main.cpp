@@ -2,13 +2,11 @@
 using std::cout;
 using std::cin;
 using std::endl;
+#include <string>
+using std::string;
 
-#include "teacher.hpp"
-#include "author.hpp"
-#include "book.hpp"
-#include "lecturer.hpp"
-#include "lesson.hpp"
-#include "classroom.hpp"
+#include "courseManager.hpp"
+CourseManager manager;
 
 const string topics[] = {"English","History","Geography","Math","Physics","Chemistry","Biology"};
 
@@ -39,18 +37,20 @@ void addLecturer(){
     string name;
     cout << "Choose lecturer name: ";
     cin >> name;
-    Lecturer name(name);
+    manager.addLecturer(new Lecturer(name));
 }
 
 void addAuthor(){
     string name;
     cout << "Choose lecturer name: ";
     cin >> name;
-    Author name(name);
+    manager.addAuthor(new Author(name));
 }
 
 void createBook(){
     string title, topic;
+    cout << "Choose author: ";
+    author = chooseAuthor();
     cout << "Choose book's title name: ";
     cin >> title;
     cout << "Choose" << title << "'s topic: ";
