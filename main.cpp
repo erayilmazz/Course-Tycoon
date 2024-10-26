@@ -49,14 +49,16 @@ void addLecturer(){
     string name;
     cout << "Choose lecturer name: ";
     cin >> name;
-    manager.addLecturer(new Lecturer(name));
+    Lecturer* newLecturer = new Lecturer(name);
+    manager.addLecturer(newLecturer);
 }
 
 void addAuthor(){
     string name;
     cout << "Choose lecturer name: ";
     cin >> name;
-    manager.addAuthor(new Author(name));
+    Author* newAuthor = new Author(name);
+    manager.addAuthor(newAuthor);
 }
 
 void createBook(){
