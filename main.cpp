@@ -10,6 +10,19 @@ using std::endl;
 #include "lesson.hpp"
 #include "classroom.hpp"
 
+const string topics[] = {"English","History","Geography","Math","Physics","Chemistry","Biology"};
+
+string chooseFromTopics(){
+    while (true){
+        string topicChoice;
+        cin >> topicChoice;
+        for (size_t i = 0; i < sizeof(topics); ++i ){
+            if (topics[i] == topicChoice) return topicChoice;
+        }
+        cout << "There is no topic named " << topicChoice << endl;
+    }
+}
+
 int action(){
     cout << "Please choose between 1-9"
     << "1. Add a lecturer"
@@ -34,6 +47,15 @@ void addAuthor(){
     cout << "Choose lecturer name: ";
     cin >> name;
     Author name(name);
+}
+
+void createBook(){
+    string title, topic;
+    cout << "Choose book's title name: ";
+    cin >> title;
+    cout << "Choose" << title << "'s topic: ";
+    topic = chooseFromTopics();
+    Book title(title, topic);
 }
 
 int main(){
