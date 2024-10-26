@@ -27,6 +27,13 @@ public:
     void addLesson(Lesson* lesson);
     void addClassroom(Classroom* classroom);
 
+    int teacherCount();
+    int authorCount();
+    int bookCount();
+    int lecturerCount();
+    int lessonCount();
+    int classroomCount();
+
     Teacher* getTeacher(int num);
     Author* getAuthor(int num);
     Book* getBook(int num);

@@ -7,6 +7,14 @@ void CourseManager::addLecturer(Lecturer* lecturer) {lecturers.push_back(lecture
 void CourseManager::addLesson(Lesson* lesson) {lessons.push_back(lesson);}
 void CourseManager::addClassroom(Classroom* classroom) {classrooms.push_back(classroom);}
 
+int CourseManager::teacherCount() {return teachers.size();}
+int CourseManager::authorCount() {return authors.size();}
+int CourseManager::bookCount() {return books.size();}
+int CourseManager::lecturerCount() {return lecturers.size();}
+int CourseManager::lessonCount() {return lessons.size();}
+int CourseManager::classroomCount() {return classrooms.size();}
+
+
 Teacher* CourseManager::getTeacher(int num) {
     if (teachers.empty()) {
         cout << "There is no teacher." << endl;

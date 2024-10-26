@@ -17,7 +17,7 @@ string chooseFromTopics(){
         for (size_t i = 0; i < sizeof(topics); ++i ){
             if (topics[i] == topicChoice) return topicChoice;
         }
-        cout << "There is no topic named " << topicChoice << endl;
+        cout << "There is no topic named: " << topicChoice << endl;
     }
 }
 
@@ -108,7 +108,7 @@ void createBook(){
     string title, topic;
     cout << "Choose book's title name: ";
     cin >> title;
-    cout << "Choose" << title << "'s topic: ";
+    cout << "Choose " << title << "'s topic: ";
     topic = chooseFromTopics();
     Book* newBook = new Book(title,topic);
     manager.addBook(newBook);
