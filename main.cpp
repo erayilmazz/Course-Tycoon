@@ -24,30 +24,33 @@ string chooseFromTopics(){
 Lesson* chooseLesson(){
     manager.displayLessons();
     size_t choice;
+    int lessonCount = manager.teacherCount();
     while (true){
-        cout << "Choose between 1-9"; //add size
+        cout << "Choose between 1-" << lessonCount <<": "; 
         cin >> choice;
-        if (choice <= 9) return manager.getLesson(choice);
+        if (choice <= lessonCount) return manager.getLesson(choice);
     }
 }
 
 Author* chooseAuthor(){
     manager.displayAuthors();
     size_t choice;
+    int authorCount = manager.authorCount();
     while (true){
-        cout << "Choose between 1-9: "; //add size
+        cout << "Choose between 1-" << authorCount << ": "; 
         cin >> choice;
-        if (choice <= 9) return manager.getAuthor(choice);
+        if (choice <= authorCount) return manager.getAuthor(choice);
     }
 }
 
 Lecturer* chooseLecturer(){
     manager.displayLecturers();
     size_t choice;
+    int lecturerCount = manager.lecturerCount();
     while (true){
-        cout << "Choose between 1-9: "; //add size
+        cout << "Choose between 1-" << lecturerCount << ": "; //add size
         cin >> choice;
-        if (choice <= 9) return manager.getLecturer(choice);
+        if (choice <= lecturerCount) return manager.getLecturer(choice);
 
     }
 }
@@ -55,10 +58,11 @@ Lecturer* chooseLecturer(){
 Book* chooseBook(){
     manager.displayBooks();
     size_t choice;
+    int bookCount = manager.bookCount();
     while (true){
-        cout << "Choose between 1-9"; //add size
+        cout << "Choose between 1-" << bookCount << ": "; 
         cin >> choice;
-        if (choice <= 9) return manager.getBook(choice);
+        if (choice <= bookCount) return manager.getBook(choice);
     }
 }
 
@@ -66,7 +70,7 @@ Classroom* chooseClassroom(){
     manager.displayLessons();
     size_t choice;
     while(true){
-        cout << "Choose between 1-9";
+        cout << "Choose between 1-9"; //add size
         cin >> choice;
         if (choice <= 9) return manager.getClassroom(choice);
     }
