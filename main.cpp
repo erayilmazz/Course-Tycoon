@@ -21,6 +21,18 @@ string chooseFromTopics(){
     }
 }
 
+Author* chooseAuthor(){
+    manager.displayAuthors();
+    size_t choice;
+    while (true){
+        cout << "Choose between 1-9: "; //add size
+        cin >> choice;
+        if (choice <= 9){
+            return manager.getAuthor(choice);
+        }
+    }
+}
+
 int action(){
     cout << "Please choose between 1-9"
     << "1. Add a lecturer"
@@ -49,13 +61,14 @@ void addAuthor(){
 
 void createBook(){
     string title, topic;
-    cout << "Choose author: ";
-    author = chooseAuthor();
     cout << "Choose book's title name: ";
     cin >> title;
     cout << "Choose" << title << "'s topic: ";
     topic = chooseFromTopics();
-    Book title(title, topic);
+    Book* newBook = new Book(title,topic);
+    manager.addBook(newBook);
+    Author* chosen_author = chooseAuthor();
+    chosen_author->addBook(newBook);    
 }
 
 int main(){
