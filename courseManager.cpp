@@ -9,77 +9,78 @@ void CourseManager::addLecturer(Lecturer* lecturer) {lecturers.push_back(lecture
 void CourseManager::addLesson(Lesson* lesson) {lessons.push_back(lesson);}
 void CourseManager::addClassroom(Classroom* classroom) {classrooms.push_back(classroom);}
 
-Teacher* CourseManager::getTeacher(string name){
+Teacher* CourseManager::getTeacher(int num) {
     if (teachers.empty()) {
         cout << "There is no teacher." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < teachers.size(); ++i){
-        if (teachers[i]->getName() == name) return teachers[i];
+    if (num > teachers.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no teacher  that name." << endl;
-    return nullptr;
+    return teachers[num];
 }
 
-Author* CourseManager::getAuthor(string name) {
+Author* CourseManager::getAuthor(int num) {
     if (authors.empty()) {
         cout << "There is no author." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < authors.size(); ++i) {
-        if (authors[i]->getName() == name) return authors[i];
+    if (num > authors.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no author with that name." << endl;
-    return nullptr;
+    return authors[num];
 }
 
-Book* CourseManager::getBook(string title) {
+Book* CourseManager::getBook(int num) {
     if (books.empty()) {
         cout << "There is no book." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < books.size(); ++i) {
-        if (books[i]->getTitle() == title) return books[i];
+    if (num > books.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no book with that title." << endl;
-    return nullptr;
+    return books[num];
 }
 
-Lecturer* CourseManager::getLecturer(string name) {
+Lecturer* CourseManager::getLecturer(int num) {
     if (lecturers.empty()) {
         cout << "There is no lecturer." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < lecturers.size(); ++i) {
-        if (lecturers[i]->getName() == name) return lecturers[i];
+    if (num > lecturers.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no lecturer with that name." << endl;
-    return nullptr;
+    return lecturers[num];
 }
 
-Lesson* CourseManager::getLesson(string subjectName) {
+Lesson* CourseManager::getLesson(int num) {
     if (lessons.empty()) {
         cout << "There is no lesson." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < lessons.size(); ++i) {
-        if (lessons[i]->getSubjectName() == subjectName) return lessons[i];
+    if (num > lessons.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no lesson with that subject name." << endl;
-    return nullptr;
+    return lessons[num];
 }
 
-Classroom* CourseManager::getClassroom(string classroomName) {
+Classroom* CourseManager::getClassroom(int num) {
     if (classrooms.empty()) {
         cout << "There is no classroom." << endl;
         return nullptr;
     }
-    for (size_t i = 0; i < classrooms.size(); ++i) {
-        if (classrooms[i]->getClassroomName() == classroomName) return classrooms[i];
+    if (num > classrooms.size()) {
+        cout << "Entered a high number" << endl;
+        return nullptr;
     }
-    cout << "There is no classroom with that name." << endl;
-    return nullptr;
+    return classrooms[num];
 }
+
 
 
 void CourseManager::displayTeachers() const{
