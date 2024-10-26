@@ -77,17 +77,19 @@ Classroom* chooseClassroom(){
 }
 
 int action(){
-    cout << "Please choose between 1-9" << endl
-    << "1. Add a lecturer" << endl
-    << "2. Add a author" << endl
-    << "3. Create a book" << endl
-    << "4. Create new lesson" << endl
-    << "5. Create new classroom" << endl
-    << "6. Edit lesson" << endl;
-     // add view choices.
     int choice;
-    cin >> choice; //  check is it between that numbers
-    return choice; 
+    while (true){
+        cout << "0. Exit" << endl
+        << "1. Add a lecturer" << endl
+        << "2. Add a author" << endl
+        << "3. Create a book" << endl
+        << "4. Create new lesson" << endl
+        << "5. Create new classroom" << endl
+        << "6. Edit lesson" << endl
+        << "Choose between 0-6: ";
+        cin >> choice;
+        if (choice <= 6 && choice >= 0) return choice;
+    } 
 }
 
 void addLecturer(){
@@ -121,33 +123,37 @@ void createBook(){
 }
 void editLesson(Lesson* lesson){
     int choice;
-    cout << "Choose between 1-9" << endl //while true
-    << "1.Set subject" << endl
-    << "2.Set lecturer" << endl
-    << "3.Set book" << endl
-    << "4.Set classroom" << endl;
-    cin >> choice;
-    if (choice == 1){
-        cout << "Choose subject: ";
-        string chosenTopic = chooseFromTopics();
-        lesson->setSubject(chosenTopic);
-    }
-    if (choice == 2){
-        cout << "Choose lecturer: ";
-        Lecturer* chosenLecturer = chooseLecturer();
-        lesson->setLecturer(chosenLecturer);
-        chosenLecturer->addLesson(lesson);
-    }
-    if (choice == 3){
-        cout << "Choose book: ";
-        Book* chosenBook = chooseBook();
-        lesson->setBook(chosenBook);
-    }
-    if (choice == 4){
-        cout << "Choose classroom: ";
-        Classroom* chosenClassroom = chooseClassroom();
-        lesson->setClassroom(chosenClassroom);
-        chosenClassroom->addLesson(lesson);
+    while (true){
+        cout << "0. Back to menu" << endl //while true
+        << "1.Set subject" << endl
+        << "2.Set lecturer" << endl
+        << "3.Set book" << endl
+        << "4.Set classroom" << endl
+        << "Choose between 0-4: ";
+        cin >> choice;
+        if (choice == 0) break;
+        if (choice == 1){
+            cout << "Choose subject: ";
+            string chosenTopic = chooseFromTopics();
+            lesson->setSubject(chosenTopic);
+        }
+        if (choice == 2){
+            cout << "Choose lecturer: ";
+            Lecturer* chosenLecturer = chooseLecturer();
+            lesson->setLecturer(chosenLecturer);
+            chosenLecturer->addLesson(lesson);
+        }
+        if (choice == 3){
+            cout << "Choose book: ";
+            Book* chosenBook = chooseBook();
+            lesson->setBook(chosenBook);
+        }
+        if (choice == 4){
+            cout << "Choose classroom: ";
+            Classroom* chosenClassroom = chooseClassroom();
+            lesson->setClassroom(chosenClassroom);
+            chosenClassroom->addLesson(lesson);
+        }
     }
 }
 
