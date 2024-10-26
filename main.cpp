@@ -10,8 +10,23 @@ using std::endl;
 #include "lesson.hpp"
 #include "classroom.hpp"
 
+int action(){
+    cout << "Please choose between 1-9"
+    << "1. Add a lecturer"
+    << "2. Add a author"
+    << "3. Create a book"
+    << "4. Create new lesson"
+    << "5. Create new classroom" << endl; // add view choices.
+    int choice;
+    cin >> choice; //  check is it between that numbers
+    return choice; 
+}
+
 int main(){
     cout << "Hello World!" << endl; //Hello World!
+    const int choice = action();
+
+
     Teacher teacher1("Kemal");
     cout << teacher1.getName() << endl; //Kemal
     teacher1.setSkills({ {"Physics", 17} });
@@ -39,6 +54,6 @@ int main(){
     lesson1.setClassroom(&classroom1);
     cout << lesson1.getLecturer()->getName() << lesson1.getBook()->getTitle() << lesson1.getClassroom()->getClassroomName() << endl; //KaneMAth10111E
     lecturer1.displayLessons();//Kane's lessons: 1.Kane
-    int choice;
-    cin >> choice;
+    int finito;
+    cin >> finito;
 }
