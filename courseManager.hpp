@@ -16,11 +16,10 @@ private:
     vector <Lesson*> lessons;
     vector <Classroom*> classrooms;
 public:
-    void addTeacher(const Teacher* teacher);
-    void addAuthor(const Author* author);
-    void addBook(const Book* book);
-    void addLecturer(const Lecturer* lecturer);
-    void addLesson(const Lesson* lesson);
-    void addClassroom(const Classroom* classroom);
-
+    void addTeacher(Teacher* teacher);
+    void addAuthor(Author* author);
+    void addBook(Book* book);
+    void addLecturer(Lecturer* lecturer);
+    void addLesson(Lesson* lesson);
+    void addClassroom(Classroom* classroom);
 };
