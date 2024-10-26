@@ -27,7 +27,12 @@ public:
     void addLesson(Lesson* lesson);
     void addClassroom(Classroom* classroom);
 
-    Teacher*  getTeacher(string name);
+    Teacher* getTeacher(string name);
+    Author* getAuthor(string name);
+    Book* getBook(string title);
+    Lecturer* getLecturer(string name);
+    Lesson* getLesson(string subjectName);
+    Classroom* getClassroom(string classroomName);
 
     void displayTeachers() const;
     void displayAuthors() const;
